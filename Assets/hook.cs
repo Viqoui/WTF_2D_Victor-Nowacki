@@ -1,26 +1,26 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class hook : MonoBehaviour
 {
     private bool isPressed = false;
     public float ReleaseTime = .15f;
     public Rigidbody2D rb;
     public Rigidbody2D Hook;
+
+    public GameObject NextKosmit;
     public float MaxDistance = 2f;
 
     private void Update ()
     {
         if (isPressed)
-        {  
-            UnityEngine.Vector2 mousePos= Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        {
+            Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            if(UnityEngine.Vector3.Distance(mousePos, Hook.position) > MaxDistance)
+            if(Vector3.Distance(mousePos, Hook.position) > MaxDistance)
                 rb.position = Hook.position + (mousePos - Hook.position).normalized * MaxDistance;
             else
-            rb.position = mousePos;
+                rb.position = mousePos;
         }
     }
 
@@ -41,5 +41,15 @@ public class hook : MonoBehaviour
     {
         yield return new WaitForSeconds(ReleaseTime);
         GetComponent<SpringJoint2D>().enabled = false;
+
+        yield return new WaitForSeconds(2f);
+        if (NextKosmit != null)
+        {
+        NextKosmit.SetActive(true);
+        } else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
     }
 }

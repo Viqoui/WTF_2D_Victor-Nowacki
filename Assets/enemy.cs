@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class enemy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public GameObject DeathEffect;
     public float health = 4f;
@@ -25,7 +25,7 @@ public class enemy : MonoBehaviour
         Destroy(gameObject);
            EnemiesAlive--;
         if (EnemiesAlive <=0)
-         Debug.Log("Level won!");
+            Debug.Log("Level won!");
     }
 
     }
