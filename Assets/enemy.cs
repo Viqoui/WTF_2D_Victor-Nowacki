@@ -25,7 +25,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
            EnemiesAlive--;
         if (EnemiesAlive <=0)
-            Debug.Log("Level won!");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     }
