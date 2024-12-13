@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class pause_menu : MonoBehaviour
@@ -15,7 +17,7 @@ public class pause_menu : MonoBehaviour
 
 
 
-    void Resume()
+    public void Resume()
     {
     PauseUI.SetActive(false);
     PauseUI2.SetActive(false);
@@ -24,7 +26,7 @@ public class pause_menu : MonoBehaviour
         Time.timeScale = 1f;
         GameIsPaused = false;
     }
-    void Pause()
+    public void Pause()
     {
     PauseUI.SetActive(true);
     PauseUI2.SetActive(true);
@@ -46,4 +48,17 @@ public class pause_menu : MonoBehaviour
             }
         }
     }
+        public void Quit ()
+ {
+    Application.Quit();
+    #if UNITY_EDITOR
+        EditorApplication.isPlaying = false;
+#endif
+  
+ }
+ public void Back()
+ {
+    Time.timeScale = 1f;
+    SceneManager.LoadScene(0);
+ }
 }
