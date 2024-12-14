@@ -48,6 +48,7 @@ public class hook : MonoBehaviour
         NextKosmit.SetActive(true);
         } else
         {
+            yield return new WaitForSeconds(2f);
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         

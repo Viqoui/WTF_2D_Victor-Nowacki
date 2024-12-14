@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,10 +8,17 @@ using UnityEngine.SceneManagement;
 public class Mainmenu : MonoBehaviour
 {
    public Animator transistionAnim;
+    public IEnumerator Wait()
+    {
 
- public void PlayGame()
+            yield return new WaitForSeconds(100000);
+    }
+
+    public void PlayGame()
  {
+   StartCoroutine(Wait());
     SceneManager.LoadScene("Level one");
+      
  }
 
 
