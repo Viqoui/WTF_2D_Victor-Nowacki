@@ -7,16 +7,12 @@ using UnityEngine.SceneManagement;
 
 public class Mainmenu : MonoBehaviour
 {
-   public Animator transistionAnim;
-    public IEnumerator Wait()
-    {
 
-            yield return new WaitForSeconds(100000);
-    }
 
     public void PlayGame()
  {
-   StartCoroutine(Wait());
+
+
     SceneManager.LoadScene("Level one");
       
  }
