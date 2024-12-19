@@ -2352,8 +2352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d5e9fbcb0c23ff4eae82bbd6efdb9ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DeathEffect: {fileID: 0}
-  health: 7
+  DeathEffect: {fileID: 3366333313488608907, guid: ac287ea6cd8084741aebf8edf4fb3996, type: 3}
+  health: 4
 --- !u!50 &752086031
 Rigidbody2D:
   serializedVersion: 4
@@ -4372,7 +4372,7 @@ Transform:
   m_GameObject: {fileID: 2106095561}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.4, y: -5.57, z: 0}
+  m_LocalPosition: {x: 13.47, y: -5.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
