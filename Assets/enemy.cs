@@ -1,4 +1,4 @@
-using System.Collections;
+ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -8,6 +8,9 @@ public class Enemy : MonoBehaviour
     public GameObject DeathEffect;
     public float health = 4f;
     public static int EnemiesAlive =0;
+
+    public GameObject WinUI;
+    
     void Start ()
     {
         EnemiesAlive++;
@@ -25,7 +28,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
            EnemiesAlive--;
         if (EnemiesAlive <=0)
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            WinUI.SetActive(true);
     }
 
     }

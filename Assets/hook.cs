@@ -10,6 +10,7 @@ public class hook : MonoBehaviour
 
     public GameObject NextKosmit;
     public float MaxDistance = 2f;
+    public GameObject LoseUI;
 
     private void Update ()
     {
@@ -48,8 +49,8 @@ public class hook : MonoBehaviour
         NextKosmit.SetActive(true);
         } else
         {
-            yield return new WaitForSeconds(2f);
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            yield return new WaitForSeconds(1f);
+            LoseUI.SetActive(true);
         }
         
     }
