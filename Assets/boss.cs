@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Collections.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class boss : MonoBehaviour
 {
@@ -39,6 +40,7 @@ public class boss : MonoBehaviour
         if (health <= 0)
         {
             Death();
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
             
         

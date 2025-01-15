@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class next : MonoBehaviour
+public class next1 : MonoBehaviour
 {
 
         private void Update ()
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void Start()
@@ -21,7 +21,7 @@ public class next : MonoBehaviour
 
  IEnumerator Next ()
  {
-    yield return new WaitForSeconds (36f);
-    SceneManager.LoadScene("Main menu");
+    yield return new WaitForSeconds (7f);
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
  }
 }

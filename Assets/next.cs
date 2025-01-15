@@ -10,7 +10,7 @@ public class next : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Z))
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
     void Start()
@@ -22,6 +22,6 @@ public class next : MonoBehaviour
  IEnumerator Next ()
  {
     yield return new WaitForSeconds (36f);
-    SceneManager.LoadScene("Main menu");
+    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
  }
 }

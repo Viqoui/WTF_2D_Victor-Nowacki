@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class timer : MonoBehaviour
 {
     float currentTime;
-    float startingTime = 5f;
+    float startingTime = 30f;
     [SerializeField] TextMeshProUGUI countdownText;
     void Start()
     {
@@ -18,7 +18,7 @@ public class timer : MonoBehaviour
     {
                 if (currentTime <= 0f)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene("cutscene 3");
         }
 
         currentTime -= 1 * Time.deltaTime;
